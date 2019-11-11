@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">disc_id</th>
+                <th scope="col">disc_name</th>
+                <th scope="col">disc_type</th>
+
+            </tr>
+        </thead>
+        
+        <tbody>
+        {% for user in discipline %}
+        <tr>
+            <td> {{user.disc_id }} </td>
+            <td> {{user.disc_name }} </td>
+            <td> {{user.disc_type}} </td>
+
+                                 <td>
+                    <a href="/edit_discipline/{{user.disc_id }}" button type="button" class="btn btn-warning" name="btn_edit_user" >Edit</a>
+                    <a href="/delete_discipline/{{user.disc_id }}" button type="button" class="btn btn-danger" name="btn_delete_user" >Delete</a>
+                </td>
+        </tr>
+        {% endfor %}
+            <tr>
+                <td> <a href="/new_discipline" type="button" class="btn btn-success" name="btn_new_skill">New Discipline</a> </td>
+            </tr>
+        
+        </tbody>
+    </table>
+ </div>
+
+
+{% endblock %}
