@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block content %}
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Tag Name</th>
+                <th scope="col">Tag Category</th>
+                <th scope="col">Likes amount</th>
+                <th scope="col">Dislikes amount</th>
+            </tr>
+            </thead>
+            <tr>
+                {% for tag in tags %}
+                    <td> {{tag.tag_name}} </td>
+                    <td> {{tag.tag_category}} </td>
+                    <td> {{tag.count_of_likes}} </td>
+                    <td> {{tag.count_of_dislikes}} </td>
+                    </tr>
+                {% endfor %}
+            <form method="post" action="/insert">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <tr>
+                    <td><input name="tag_name" required></td>
+                    <td><input name="tag_category" required></td>
+                    <td><input name="count_of_likes" required></td>
+                    <td><input name="count_of_dislikes" required></td>
+                    <td> <button type="submit" class="btn btn-success">New Tag</button> </td>
+                </tr>
+            </form>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
