@@ -1,0 +1,17 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "description": "TrishynaAnna",
+  "env": {
+  },
+  "formation": {
+  },
+  "name": "lab_2",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
