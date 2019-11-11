@@ -1,0 +1,42 @@
+
+
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">category name</th>
+                <th scope="col">category tags</th>
+                <th scope="col">category count</th>
+                <th scope="col">category comment</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categorys %}
+            <tr >
+                <td> {{category.name}} </td>
+                <td> {{category.tags}} </td>
+                <td> {{category.count_of_subscribers}} </td>
+                <td> {{category.comment}} </td>
+<!--                <td>-->
+<!--                    -->
+<!--                </td>-->
+            </tr>
+
+        {% endfor %}
+            <tr>
+                <td> <button type="button" class="btn btn-success" name="btn_new_category">New Category</button> </td>
+            </tr>
+        </tbody>
+    </table>
+ </div>
+
+    <script src="{{ url_for('static', filename='js/group.js') }}"></script>
+
+{% endblock %}
