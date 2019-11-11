@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">name</th>
+                <th scope="col">age_group</th>
+                <th scope="col">tags</th>
+                <th scope="col">count_of_subsc</th>
+                <th scope="col">post id</th>
+
+
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for user in category %}
+        <tr>
+            <td> {{user.name }} </td>
+            <td> {{user.age_group}} </td>
+            <td> {{user.tags}} </td>
+            <td> {{user.count_of_subscribers}} </td>
+            <td> {{user.post_id}} </td>
+
+            <td>
+                    <a href="/update/{{user.name}} " button type="button" class="btn btn-warning" name="btn_edit_client" data-user_id="{{user.name}}">Edit</a>
+
+                </td>
+        </tr>
+        {% endfor %}
+
+
+        </tbody>
+    </table>
+ </div>
+
+
+{% endblock %}
